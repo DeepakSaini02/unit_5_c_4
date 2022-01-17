@@ -1,8 +1,13 @@
 import { useState } from "react"
+import {useDispatch} from 'react-redux'
+import { regisError, regisLoading, regisSuccess } from "../store/auth/action"
+
 
 export const Registration=()=>{
 
 const [form,setForm]=useState(null)
+
+const dispatch=useDispatch()
 
 const handleChange=(e)=>{
     const {name,value}=e.target
@@ -14,6 +19,19 @@ const handleChange=(e)=>{
 
 const handleSubmit=(e)=>{
     e.preventDefault()
+    console.log(form);
+    dispatch(regisLoading())
+    fetch("http://localhost:3001/login",{
+        method:'POST',
+        body:JSON.stringify(form),
+        headers:{
+            'Content-Type':'application/json'
+        }
+    }).then(res=>res.json()).then(d=>{
+        dispatch(regisSuccess(d))
+    }).catch(err=>{
+        dispatch(regisError(err))
+    })
     
 }
 

@@ -1,3 +1,13 @@
 {
-    "login":[]
+  
+  "login": [
+    {
+      "name": "deepak saini",
+      "mobile": "8949975939",
+      "email": "15eiacs012@gmail.com",
+      "password": "masaischool",
+      "type": "user",
+      "id": 1
+    }
+  ]
 }
