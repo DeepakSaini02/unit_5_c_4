@@ -1,8 +1,18 @@
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { Navigate, useNavigate } from "react-router-dom"
+import { loginStatus } from "../store/auth/action"
+
 
 export const Login=()=>{
 
 const [form,setForm]=useState(null)
+
+const {status}=useSelector((state)=>({status:state.status}))
+
+const [user,setUser]=useState([])
+
+const dispatch=useDispatch()
 
 const handleChange=(e)=>{
     const {name,value}=e.target
@@ -14,7 +24,22 @@ const handleChange=(e)=>{
 
 const handleSubmit=(e)=>{
     e.preventDefault()
-    console.log(form)
+   fetch('http://localhost:3001/login').then(res=>res.json()).then(d=>{
+
+    d.map((el)=>{
+        if(el.email==form.email && el.password==form.password){
+            if(el.type=='user'){
+                dispatch(loginStatus('user'))
+            }
+            else{
+                dispatch(loginStatus('admin'))
+            }
+        }
+       
+    })
+   })
+   
+  
 }
 
 
@@ -25,5 +50,6 @@ const handleSubmit=(e)=>{
         <input type="submit" value='Submit' />
 
         </form>
+        <h1>{status}</h1>
     </div>
 }

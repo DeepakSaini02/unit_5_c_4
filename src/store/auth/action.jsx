@@ -1,4 +1,4 @@
-import { REGIS_ERROR, REGIS_LOADING, REGIS_SUCCESS } from "./actionTypes"
+import { LOGIN_STATUS, REGIS_ERROR, REGIS_LOADING, REGIS_SUCCESS } from "./actionTypes"
 
 export const regisLoading=()=>{
     return {
@@ -16,6 +16,13 @@ export const regisSuccess=(payload)=>{
 export const regisError=(payload)=>{
     return {
         type:REGIS_ERROR,
+        payload
+    }
+}
+
+export const loginStatus=(payload)=>{
+    return {
+        type:LOGIN_STATUS,
         payload
     }
 }

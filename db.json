@@ -1,5 +1,4 @@
 {
-  
   "login": [
     {
       "name": "deepak saini",
@@ -8,6 +7,14 @@
       "password": "masaischool",
       "type": "user",
       "id": 1
+    },
+    {
+      "name": "deepak",
+      "mobile": "8949975939",
+      "email": "eve.holt@reqres.in",
+      "password": "cityslicka",
+      "type": "admin",
+      "id": 2
     }
   ]
 }

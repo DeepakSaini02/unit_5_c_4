@@ -1,7 +1,7 @@
-import { REGIS_ERROR, REGIS_LOADING, REGIS_SUCCESS } from "./actionTypes"
+import { LOGIN_STATUS, REGIS_ERROR, REGIS_LOADING, REGIS_SUCCESS } from "./actionTypes"
 
 
-const init={loading:false,login:[],error:false}
+const init={loading:false,login:[],error:false,status:'logout'}
 
 export const regisReducer=(state=init,{type,payload})=>{
     switch(type){
@@ -20,6 +20,11 @@ export const regisReducer=(state=init,{type,payload})=>{
             ...state,
             loading:false,
             error:true
+        }
+
+        case LOGIN_STATUS:return{
+            ...state,
+            status:payload
         }
 
         default:return state
