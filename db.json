@@ -25,6 +25,23 @@
       "dis": "asdf",
       "location": "alwar",
       "id": 1
+    },
+    {
+      "cname": "masai",
+      "title": "ia",
+      "salary": "600000",
+      "dis": "sdsfs",
+      "location": "banglore",
+      "id": 2
+    },
+    {
+      "cname": "ibm",
+      "title": "it support",
+      "salary": "6000000",
+      "dis": "sdsfsdsfa",
+      "location": "jaipur",
+      "jtype": "office",
+      "id": 3
     }
   ]
 }

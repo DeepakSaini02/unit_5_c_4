@@ -1,22 +1,22 @@
-import { LOGIN_STATUS, POST_ERROR, POST_LOADING, POST_SUCCESS } from "./actionTypes"
+import { LOGIN_STATUS, GETJOB_ERROR, GETJOB_LOADING, GETJOB_SUCCESS } from "./actionTypes"
 
 
-const init={loading:false,post:[],error:false,status:'logout'}
+const init={loading:false,job:[],error:false,status:'logout'}
 
-export const postReducer=(state=init,{type,payload})=>{
+export const getjobReducer=(state=init,{type,payload})=>{
     switch(type){
-        case POST_LOADING:return{
+        case GETJOB_LOADING:return{
             ...state,
             loading:true
         }
 
-        case POST_SUCCESS:return{
+        case GETJOB_SUCCESS:return{
             ...state,
-            post:[...state.post,payload],
+            job:payload,
             loading:false
         }
 
-        case POST_ERROR:return{
+        case GETJOB_ERROR:return{
             ...state,
             loading:false,
             error:true
