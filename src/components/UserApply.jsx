@@ -1,12 +1,17 @@
 import { useSelector } from "react-redux"
+import { Navigate } from "react-router-dom"
 import './UserApply.css'
 export const UserApply=()=>{
 
     const {apply}=useSelector((state)=>({apply:state.job.apply}))
 console.log(apply)
 
+const {status}=useSelector((state)=>({status:state.auth.status}))
+
+if(status=='logout')
+return <Navigate to='/login' />
     return <div>
-<h1>apply loginStatus</h1>
+<h1>apply Status</h1>
 <div id="outer">
 {
             apply.map((el)=>(
