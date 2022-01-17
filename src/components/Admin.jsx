@@ -1,9 +1,14 @@
 import { useState } from "react"
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import { Navigate } from "react-router-dom"
 import { regisError, regisLoading, regisSuccess } from "../store/auth/action"
 
 
 export const Admin=()=>{
+
+    const {status}=useSelector((state)=>({status:state.auth.status}))
+
+
 
 const [form,setForm]=useState(null)
 
@@ -35,6 +40,8 @@ const handleSubmit=(e)=>{
     
 }
 
+if(status!='admin')
+return <Navigate to='/' />
 
     return <div>
         <form action="" onSubmit={handleSubmit}>
