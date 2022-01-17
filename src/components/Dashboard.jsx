@@ -1,11 +1,13 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { Navigate } from "react-router-dom"
 import { getjobError, getjobLoading, getjobSuccess } from "../store/get_job/action"
 import './Dashboard.css'
 
 
 export const Dashboard=()=>{
 
+    const {status}=useSelector((state)=>({status:state.auth.status}))
 const dispatch=useDispatch()
 
 const {job}=useSelector((state)=>({job:state.job.job}))
@@ -37,6 +39,8 @@ const loactionSort=()=>{
     dispatch(getjobSuccess(x))
 }
 
+if(status=='logout')
+return <Navigate to='/login' />
 
     return <div id="main">
     <button onClick={salarySort} >salary</button>
