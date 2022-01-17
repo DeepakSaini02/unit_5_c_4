@@ -16,5 +16,15 @@
       "type": "admin",
       "id": 2
     }
+  ],
+  "jobs": [
+    {
+      "cname": "dell",
+      "title": "dev",
+      "salary": "10000000",
+      "dis": "asdf",
+      "location": "alwar",
+      "id": 1
+    }
   ]
 }

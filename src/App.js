@@ -18,6 +18,7 @@ function App() {
     <Route path='/admin' element={<Admin />}></Route>
     <Route path='/dashboard' element={<Dashboard />}></Route>
     <Route path='/registration' element={<Registration />}></Route>
+    
     </Routes>
 
 

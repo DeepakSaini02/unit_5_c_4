@@ -8,9 +8,9 @@ export const Login=()=>{
 
 const [form,setForm]=useState(null)
 
-const {status}=useSelector((state)=>({status:state.status}))
+const {status}=useSelector((state)=>({status:state.auth.status}))
 
-const [user,setUser]=useState([])
+
 
 const dispatch=useDispatch()
 

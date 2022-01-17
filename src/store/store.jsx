@@ -1,4 +1,10 @@
 import { regisReducer } from "./auth/reducer";
-import {createStore} from 'redux'
+import {combineReducers, createStore} from 'redux'
+import {postReducer} from './job_post/reducer'
 
-export const store=createStore(regisReducer)
+const rootReducer=combineReducers({
+    auth:regisReducer,
+    post:postReducer
+})
+
+export const store=createStore(rootReducer)
