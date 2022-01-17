@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Navigate } from "react-router-dom"
-import { getjobError, getjobLoading, getjobSuccess } from "../store/get_job/action"
+import { applyJob, getjobError, getjobLoading, getjobSuccess } from "../store/get_job/action"
 import './Dashboard.css'
 
 
@@ -9,7 +9,7 @@ export const Dashboard=()=>{
 
     const {status}=useSelector((state)=>({status:state.auth.status}))
 
-    const [list,setList]=useState([])
+  
 
 const dispatch=useDispatch()
 
@@ -43,7 +43,7 @@ const loactionSort=()=>{
         return -1
         if(a.location>b.location)
         return 1
-        
+
         return 0
     })
     dispatch(getjobSuccess(x))
@@ -51,8 +51,8 @@ const loactionSort=()=>{
 
 
 const applyList=(el)=>{
-    setList([...list,el])
-    console.log(list);
+ 
+  dispatch(applyJob(el))
 }
 
 if(status=='logout')

@@ -8,5 +8,6 @@ export const Navbar=()=>{
         <Link to='/registration'>Registration</Link>
         <Link to='/Admin'>Admin</Link>
         <Link to='/dashboard'>Dashboard</Link>
+        <Link to='/apply'>UserList</Link>
     </div>
 }

@@ -1,4 +1,4 @@
-import { LOGIN_STATUS, GETJOB_ERROR, GETJOB_LOADING, GETJOB_SUCCESS } from "./actionTypes"
+import { APPLY_JOB, GETJOB_ERROR, GETJOB_LOADING, GETJOB_SUCCESS } from "./actionTypes"
 
 export const getjobLoading=()=>{
     return {
@@ -20,9 +20,9 @@ export const getjobError=(payload)=>{
     }
 }
 
-// export const loginStatus=(payload)=>{
-//     return {
-//         type:LOGIN_STATUS,
-//         payload
-//     }
-// }
+export const applyJob=(payload)=>{
+    return {
+        type:APPLY_JOB,
+        payload
+    }
+}

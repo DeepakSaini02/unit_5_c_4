@@ -7,6 +7,7 @@ import { Login } from './components/Login';
 import { Admin } from './components/Admin';
 import { Dashboard } from './components/Dashboard';
 import { Registration } from './components/Registratin';
+import { UserApply } from './components/UserApply';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
     <Route path='/admin' element={<Admin />}></Route>
     <Route path='/dashboard' element={<Dashboard />}></Route>
     <Route path='/registration' element={<Registration />}></Route>
-    
+    <Route path='/apply' element={<UserApply />}></Route>
     </Routes>
 
 
